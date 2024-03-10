@@ -1,3 +1,7 @@
+names = [
+      {'first': 'Ada', 'last': 'Lovelace'},
+      {'first': 'Grace', 'last': 'Hopper'},
+        ]
 def extract_full_names(people):
     """Return list of names, extracting from first+last keys in people dicts.
 
@@ -14,3 +18,10 @@ def extract_full_names(people):
         >>> extract_full_names(names)
         ['Ada Lovelace', 'Grace Hopper']
     """
+    full_names = []  
+    for person in people:  
+        if 'first' in person and 'last' in person:  
+            full_name = person['first'] + ' ' + person['last']  
+            full_names.append(full_name)  
+    return full_names  
+print (extract_full_names(names))

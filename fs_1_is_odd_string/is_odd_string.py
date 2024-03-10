@@ -29,3 +29,27 @@ def is_odd_string(word):
     """
 
     # Hint: you may find the ord() function useful here
+    char_positions = {}
+    for char in 'abcdefghijklmnopqrstuvwxyz':
+        position = ord(char.lower()) - ord('a') + 1
+        char_positions[char] = position
+    
+    # Convert the word to lowercase for uniformity
+    word_lower = word.lower()
+    
+    # Calculate the sum of character positions in the word
+    total = 0
+    for char in word_lower:
+        if char in char_positions:
+            total += char_positions[char]
+    
+    # Check if the sum is odd
+    if total % 2 != 0:
+        return True
+    else:
+        return False
+print (is_odd_string('a'))
+print (is_odd_string('A'))
+print (is_odd_string('aaaa'))
+print (is_odd_string('AAaa'))
+print (is_odd_string('amazing'))
